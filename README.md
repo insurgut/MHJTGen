@@ -2,7 +2,7 @@
 
 <div align="center">
   
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?style=for-the-badge&logo=semver&logoColor=white)
+![Version](https://img.shields.io/badge/version-J1-blue.svg?style=for-the-badge&logo=semver&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
 ![React](https://img.shields.io/badge/React-18.2.0-61DAFB.svg?style=for-the-badge&logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white)

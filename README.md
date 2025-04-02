@@ -1,4 +1,4 @@
-# Eastern European Data Generator
+# MHJTGen
 
 <div align="center">
   
@@ -8,17 +8,17 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-4.18.2-000000.svg?style=for-the-badge&logo=express&logoColor=white)
 
-<img src="attached_assets/Screenshot_20250402-093333.png" alt="Eastern European Data Generator Interface" width="800"/>
+<img src="attached_assets/Screenshot_20250402-093333.png" alt="MHJTGen Interface" width="800"/>
 
 </div>
 
 ## О проекте
 
-**Eastern European Data Generator** представляет собой профессиональный инструмент для создания реалистичных персональных данных, соответствующих форматам стран Восточной Европы. Приложение генерирует аутентичные имена, телефонные номера, адреса и паспортные данные для России, Украины, Польши и Беларуси с учетом региональных особенностей и форматирования.
+**MHJT** представляет собой профессиональный инструмент для создания реалистичных персональных данных, соответствующих форматам стран Восточной Европы. Приложение генерирует аутентичные имена, телефонные номера, адреса и паспортные данные для России, Украины, Польши и Беларуси с учетом региональных особенностей и форматирования.
 
 ## Особенности
 
-**Eastern European Data Generator** предлагает ряд функциональных возможностей:
+**MHJTGen** предлагает ряд функциональных возможностей:
 
 **Мгновенная генерация данных** - получение персональных данных происходит за миллисекунды, что обеспечивает высокую производительность при работе даже с большими объемами записей.
 
@@ -52,8 +52,8 @@
 
 ```bash
 # Клонирование репозитория
-git clone https://github.com/username/eastern-european-data-generator.git
-cd eastern-european-data-generator
+git clone https://github.com/username/MHJTGen.git
+cd MHJTGen
 
 # Установка зависимостей
 npm install
@@ -108,8 +108,8 @@ POST /api/export   - экспортирует данные в выбранный
   
 Проект разработан командой [Lisurgut](https://github.com/lisurgut)
 
-![GitHub stars](https://img.shields.io/github/stars/lisurgut/eastern-european-data-generator?style=social)
-![GitHub forks](https://img.shields.io/github/forks/lisurgut/eastern-european-data-generator?style=social)
+![GitHub stars](https://img.shields.io/github/stars/lisurgut/MHJTGen?style=social)
+![GitHub forks](https://img.shields.io/github/forks/lisurgut/MHJTGen?style=social)
 
 </div>
 
@@ -121,6 +121,6 @@ POST /api/export   - экспортирует данные в выбранный
 
 <div align="center">
   
-  **[Наверх](#eastern-european-data-generator)**
+  **[Наверх](#MHJTGen)**
   
 </div>

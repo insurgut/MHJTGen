@@ -26,8 +26,8 @@ export default function ToastMessage({ visible, message, type, onClose }: ToastM
   return (
     <div 
       className={`fixed bottom-4 right-4 ${
-        type === "success" ? "bg-[hsl(var(--success))]" : "bg-accent"
-      } text-white px-4 py-2 rounded shadow-lg flex items-center z-50`}
+        type === "success" ? "bg-gray-800" : "bg-gray-800"
+      } text-white px-4 py-2 rounded shadow-lg flex items-center z-50 border border-gray-700`}
     >
       <svg 
         xmlns="http://www.w3.org/2000/svg" 

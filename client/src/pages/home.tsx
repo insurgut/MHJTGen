@@ -146,14 +146,14 @@ export default function Home() {
         <div className="flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold flex items-center">
-              <FaIdCard className="mr-2 text-accent" />
+              <FaIdCard className="mr-2 text-white" />
               Eastern European Data Generator
             </h1>
             <p className="text-sm text-gray-400">Generate authentic personal data for Eastern European countries</p>
           </div>
           <div className="flex items-center space-x-3">
             <span className="text-xs text-gray-400">Created by</span>
-            <span className="text-sm font-medium text-accent">@lisurgut</span>
+            <span className="text-sm font-medium text-white">@lisurgut</span>
           </div>
         </div>
       </header>

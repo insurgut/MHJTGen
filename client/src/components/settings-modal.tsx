@@ -95,7 +95,7 @@ export default function SettingsModal({ isOpen, onClose, settings, onApply }: Se
           </Button>
           <Button 
             onClick={() => onApply(localSettings)}
-            className="bg-accent hover:bg-accent/90 text-white font-medium py-1.5 px-3 rounded transition-colors"
+            className="bg-gray-800 hover:bg-gray-700 text-white font-medium py-1.5 px-3 rounded border border-gray-700 transition-colors"
           >
             Apply
           </Button>

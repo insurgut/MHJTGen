@@ -66,7 +66,7 @@ export default function DataPreview({
               size="icon" 
               onClick={onRefresh}
               disabled={isLoading}
-              className="text-gray-400 hover:text-accent transition-colors" 
+              className="text-gray-400 hover:text-white transition-colors" 
               title="Refresh Data"
             >
               <FaSyncAlt className={isLoading ? "animate-spin" : ""} />
@@ -75,7 +75,7 @@ export default function DataPreview({
               variant="ghost" 
               size="icon" 
               onClick={onOpenSettings}
-              className="text-gray-400 hover:text-accent transition-colors" 
+              className="text-gray-400 hover:text-white transition-colors" 
               title="Display Settings"
             >
               <FaCog />
@@ -149,7 +149,7 @@ export default function DataPreview({
         {/* Status Bar */}
         <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
           <div className="flex items-center">
-            <span className="w-2 h-2 bg-[hsl(var(--success))] rounded-full mr-1.5"></span>
+            <span className="w-2 h-2 bg-white rounded-full mr-1.5"></span>
             {isLoading ? "Generating data..." : "Ready to generate data"}
           </div>
           <div>

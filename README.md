@@ -106,8 +106,8 @@ POST /api/export   - экспортирует данные в выбранный
   
 Проект разработан командой [insurgut](https://github.com/insurgut)
 
-![GitHub stars](https://img.shields.io/github/stars/insurgut/MHJTGen?style=social)
-![GitHub forks](https://img.shields.io/github/forks/insurgut/MHJTGen?style=social)
+![GitHub stars](https://img.shields.io/github/ MHJTGen/insurgut/MHJTGen?style=social)
+![GitHub forks](https://img.shields.io/github/MHJTGen/insurgut/MHJTGen?style=social)
 
 </div>
 

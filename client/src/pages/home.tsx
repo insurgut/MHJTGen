@@ -68,24 +68,42 @@ export default function Home() {
     }
     
     try {
-      const res = await apiRequest('POST', `/api/export`, {
-        format,
-        data,
-        options
+      // Create a direct fetch request with proper headers for binary data
+      const response = await fetch('/api/export', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          format,
+          data,
+          options
+        })
       });
       
-      const blob = await res.blob();
+      if (!response.ok) {
+        throw new Error(`Export failed with status: ${response.status}`);
+      }
+      
+      // Get the blob from the response
+      const blob = await response.blob();
+      
+      // Create a link to download the file
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
       a.download = `eastern-european-data.${format}`;
       document.body.appendChild(a);
       a.click();
+      
+      // Cleanup
+      window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
       
       showToast(`${format.toUpperCase()} file downloaded with @lisurgut credit`, "accent");
     } catch (error) {
-      showToast(`Failed to export data: ${error}`, "accent");
+      console.error("Export error:", error);
+      showToast(`Failed to export data. Please try again.`, "accent");
     }
   };
   

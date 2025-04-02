@@ -69,12 +69,53 @@
   
   /* Range input styling */
   input[type="range"] {
-    @apply h-1 bg-border rounded;
+    @apply h-2 bg-gray-700 rounded-full;
     -webkit-appearance: none;
   }
   
   input[type="range"]::-webkit-slider-thumb {
-    @apply w-4 h-4 bg-accent rounded-full cursor-pointer;
     -webkit-appearance: none;
+    appearance: none;
+    @apply w-4 h-4 bg-blue-500 rounded-full cursor-pointer;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    transition: all 0.2s ease;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
+    @apply bg-blue-600;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    @apply w-4 h-4 bg-blue-500 rounded-full cursor-pointer border-0;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    transition: all 0.2s ease;
+  }
+  
+  input[type="range"]::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
+    @apply bg-blue-600;
+  }
+  
+  /* Checkbox styling */
+  input[type="checkbox"] {
+    @apply rounded-sm bg-gray-800 border-gray-600;
+  }
+  
+  input[type="checkbox"]:checked {
+    @apply bg-blue-500 border-blue-500;
+  }
+  
+  /* Button styling */
+  button {
+    @apply transition-all duration-200 ease-in-out shadow-sm;
+  }
+  
+  button:hover {
+    @apply shadow-md transform -translate-y-0.5;
+  }
+  
+  button:active {
+    @apply shadow-inner transform translate-y-0;
   }
 }

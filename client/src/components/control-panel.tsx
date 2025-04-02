@@ -85,21 +85,28 @@ export default function ControlPanel({
         <div className="mb-4">
           <Label className="block text-sm font-medium mb-1.5">Records Count</Label>
           <div className="flex items-center space-x-3">
-            <Input 
-              type="range" 
-              min="1" 
-              max="1000" 
-              value={options.recordsCount} 
-              onChange={(e) => handleRecordsSliderChange(e.target.value)}
-              className="w-full" 
-            />
+            <div className="w-full relative h-7">
+              <input 
+                type="range" 
+                min="1" 
+                max="1000" 
+                value={options.recordsCount} 
+                onChange={(e) => handleRecordsSliderChange(e.target.value)}
+                className="w-full h-2 appearance-none rounded-full bg-gray-700 outline-none cursor-pointer" 
+                style={{
+                  background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${options.recordsCount/10}%, #374151 ${options.recordsCount/10}%, #374151 100%)`,
+                  WebkitAppearance: 'none'
+                }}
+              />
+
+            </div>
             <Input 
               type="number" 
               min="1" 
               max="1000" 
               value={recordsInputValue}
               onChange={(e) => handleRecordsInputChange(e.target.value)}
-              className="w-16 bg-background border border-border rounded px-2 py-1 text-foreground focus:outline-none focus:ring-1 focus:ring-accent" 
+              className="w-20 bg-gray-800 border border-gray-700 rounded-md px-2 py-1 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center" 
             />
           </div>
         </div>
@@ -107,111 +114,125 @@ export default function ControlPanel({
         {/* Fields Selection */}
         <div className="mb-4">
           <Label className="block text-sm font-medium mb-2">Data Fields</Label>
-          <div className="space-y-2">
+          <div className="space-y-3">
             <div className="flex items-center">
-              <Checkbox 
-                id="fieldName" 
-                checked={options.fields.name}
-                onCheckedChange={(checked) => 
-                  setOptions({
-                    ...options, 
-                    fields: {...options.fields, name: !!checked}
-                  })
-                }
-                className="h-4 w-4 text-accent bg-background border-border rounded" 
-              />
-              <label htmlFor="fieldName" className="ml-2 text-sm">Full Name</label>
+              <div className="w-5 h-5 relative flex items-center justify-center">
+                <Checkbox 
+                  id="fieldName" 
+                  checked={options.fields.name}
+                  onCheckedChange={(checked) => 
+                    setOptions({
+                      ...options, 
+                      fields: {...options.fields, name: !!checked}
+                    })
+                  }
+                  className="h-5 w-5 rounded-md border-2 border-gray-600 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" 
+                />
+              </div>
+              <label htmlFor="fieldName" className="ml-3 text-sm font-medium cursor-pointer">Full Name</label>
             </div>
             <div className="flex items-center">
-              <Checkbox 
-                id="fieldPhone" 
-                checked={options.fields.phone}
-                onCheckedChange={(checked) => 
-                  setOptions({
-                    ...options, 
-                    fields: {...options.fields, phone: !!checked}
-                  })
-                }
-                className="h-4 w-4 text-accent bg-background border-border rounded" 
-              />
-              <label htmlFor="fieldPhone" className="ml-2 text-sm">Phone Number</label>
+              <div className="w-5 h-5 relative flex items-center justify-center">
+                <Checkbox 
+                  id="fieldPhone" 
+                  checked={options.fields.phone}
+                  onCheckedChange={(checked) => 
+                    setOptions({
+                      ...options, 
+                      fields: {...options.fields, phone: !!checked}
+                    })
+                  }
+                  className="h-5 w-5 rounded-md border-2 border-gray-600 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" 
+                />
+              </div>
+              <label htmlFor="fieldPhone" className="ml-3 text-sm font-medium cursor-pointer">Phone Number</label>
             </div>
             <div className="flex items-center">
-              <Checkbox 
-                id="fieldAddress" 
-                checked={options.fields.address}
-                onCheckedChange={(checked) => 
-                  setOptions({
-                    ...options, 
-                    fields: {...options.fields, address: !!checked}
-                  })
-                }
-                className="h-4 w-4 text-accent bg-background border-border rounded" 
-              />
-              <label htmlFor="fieldAddress" className="ml-2 text-sm">Address</label>
+              <div className="w-5 h-5 relative flex items-center justify-center">
+                <Checkbox 
+                  id="fieldAddress" 
+                  checked={options.fields.address}
+                  onCheckedChange={(checked) => 
+                    setOptions({
+                      ...options, 
+                      fields: {...options.fields, address: !!checked}
+                    })
+                  }
+                  className="h-5 w-5 rounded-md border-2 border-gray-600 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" 
+                />
+              </div>
+              <label htmlFor="fieldAddress" className="ml-3 text-sm font-medium cursor-pointer">Address</label>
             </div>
             <div className="flex items-center">
-              <Checkbox 
-                id="fieldPassport" 
-                checked={options.fields.passport}
-                onCheckedChange={(checked) => 
-                  setOptions({
-                    ...options, 
-                    fields: {...options.fields, passport: !!checked}
-                  })
-                }
-                className="h-4 w-4 text-accent bg-background border-border rounded" 
-              />
-              <label htmlFor="fieldPassport" className="ml-2 text-sm">Passport Data</label>
+              <div className="w-5 h-5 relative flex items-center justify-center">
+                <Checkbox 
+                  id="fieldPassport" 
+                  checked={options.fields.passport}
+                  onCheckedChange={(checked) => 
+                    setOptions({
+                      ...options, 
+                      fields: {...options.fields, passport: !!checked}
+                    })
+                  }
+                  className="h-5 w-5 rounded-md border-2 border-gray-600 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" 
+                />
+              </div>
+              <label htmlFor="fieldPassport" className="ml-3 text-sm font-medium cursor-pointer">Passport Data</label>
             </div>
           </div>
         </div>
 
         {/* Name Options */}
-        <div className="mb-4 border-t border-border pt-4">
+        <div className="mb-4 border-t border-gray-700 pt-4">
           <Label className="block text-sm font-medium mb-2">Name Options</Label>
           <div className="grid grid-cols-2 gap-3">
             <div className="flex items-center">
-              <Checkbox 
-                id="includeFirstName" 
-                checked={options.nameOptions.firstName}
-                onCheckedChange={(checked) => 
-                  setOptions({
-                    ...options, 
-                    nameOptions: {...options.nameOptions, firstName: !!checked}
-                  })
-                }
-                className="h-4 w-4 text-accent bg-background border-border rounded" 
-              />
-              <label htmlFor="includeFirstName" className="ml-2 text-sm">First Name</label>
+              <div className="w-5 h-5 relative flex items-center justify-center">
+                <Checkbox 
+                  id="includeFirstName" 
+                  checked={options.nameOptions.firstName}
+                  onCheckedChange={(checked) => 
+                    setOptions({
+                      ...options, 
+                      nameOptions: {...options.nameOptions, firstName: !!checked}
+                    })
+                  }
+                  className="h-5 w-5 rounded-md border-2 border-gray-600 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" 
+                />
+              </div>
+              <label htmlFor="includeFirstName" className="ml-3 text-sm font-medium cursor-pointer">First Name</label>
             </div>
             <div className="flex items-center">
-              <Checkbox 
-                id="includeLastName" 
-                checked={options.nameOptions.lastName}
-                onCheckedChange={(checked) => 
-                  setOptions({
-                    ...options, 
-                    nameOptions: {...options.nameOptions, lastName: !!checked}
-                  })
-                }
-                className="h-4 w-4 text-accent bg-background border-border rounded" 
-              />
-              <label htmlFor="includeLastName" className="ml-2 text-sm">Last Name</label>
+              <div className="w-5 h-5 relative flex items-center justify-center">
+                <Checkbox 
+                  id="includeLastName" 
+                  checked={options.nameOptions.lastName}
+                  onCheckedChange={(checked) => 
+                    setOptions({
+                      ...options, 
+                      nameOptions: {...options.nameOptions, lastName: !!checked}
+                    })
+                  }
+                  className="h-5 w-5 rounded-md border-2 border-gray-600 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" 
+                />
+              </div>
+              <label htmlFor="includeLastName" className="ml-3 text-sm font-medium cursor-pointer">Last Name</label>
             </div>
             <div className="flex items-center">
-              <Checkbox 
-                id="includePatronymic" 
-                checked={options.nameOptions.patronymic}
-                onCheckedChange={(checked) => 
-                  setOptions({
-                    ...options, 
-                    nameOptions: {...options.nameOptions, patronymic: !!checked}
-                  })
-                }
-                className="h-4 w-4 text-accent bg-background border-border rounded" 
-              />
-              <label htmlFor="includePatronymic" className="ml-2 text-sm">Patronymic</label>
+              <div className="w-5 h-5 relative flex items-center justify-center">
+                <Checkbox 
+                  id="includePatronymic" 
+                  checked={options.nameOptions.patronymic}
+                  onCheckedChange={(checked) => 
+                    setOptions({
+                      ...options, 
+                      nameOptions: {...options.nameOptions, patronymic: !!checked}
+                    })
+                  }
+                  className="h-5 w-5 rounded-md border-2 border-gray-600 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" 
+                />
+              </div>
+              <label htmlFor="includePatronymic" className="ml-3 text-sm font-medium cursor-pointer">Patronymic</label>
             </div>
           </div>
         </div>
@@ -224,17 +245,23 @@ export default function ControlPanel({
             <span className="text-xs">Equal</span>
             <span className="text-xs">Female</span>
           </div>
-          <Input 
-            type="range" 
-            min="0" 
-            max="100" 
-            value={options.genderRatio} 
-            onChange={(e) => setOptions({...options, genderRatio: parseInt(e.target.value, 10)})}
-            className="w-full" 
-          />
-          <div className="flex justify-between">
-            <span className="text-xs text-gray-400">{options.genderRatio}%</span>
-            <span className="text-xs text-gray-400">{100 - options.genderRatio}%</span>
+          <div className="w-full relative h-7">
+            <input 
+              type="range" 
+              min="0" 
+              max="100" 
+              value={options.genderRatio} 
+              onChange={(e) => setOptions({...options, genderRatio: parseInt(e.target.value, 10)})}
+              className="w-full h-2 appearance-none rounded-full bg-gray-700 outline-none cursor-pointer" 
+              style={{
+                background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${options.genderRatio}%, #374151 ${options.genderRatio}%, #374151 100%)`,
+                WebkitAppearance: 'none'
+              }}
+            />
+          </div>
+          <div className="flex justify-between mt-1">
+            <span className="text-xs text-gray-400">{options.genderRatio}% male</span>
+            <span className="text-xs text-gray-400">{100 - options.genderRatio}% female</span>
           </div>
         </div>
 
@@ -243,7 +270,7 @@ export default function ControlPanel({
           <Button 
             onClick={onGenerate}
             disabled={isLoading}
-            className="bg-accent hover:bg-accent/90 text-white font-medium py-2 px-4 rounded flex justify-center items-center transition-colors"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-5 rounded-md flex justify-center items-center transition-colors shadow-md"
           >
             {isLoading ? (
               <>
@@ -255,7 +282,7 @@ export default function ControlPanel({
               </>
             ) : (
               <>
-                <FaBolt className="mr-2" />
+                <FaBolt className="mr-2 text-yellow-300" />
                 Generate Data
               </>
             )}
@@ -266,27 +293,27 @@ export default function ControlPanel({
               onClick={() => onExport('csv')}
               disabled={isLoading}
               variant="outline"
-              className="flex-1 bg-background hover:bg-background/90 text-foreground font-medium py-2 px-3 rounded border border-border flex items-center justify-center transition-colors"
+              className="flex-1 bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-3 rounded-md border border-gray-700 flex items-center justify-center transition-colors shadow-sm"
             >
-              <FaFileCsv className="mr-1.5" />
+              <FaFileCsv className="mr-1.5 text-blue-400" />
               CSV
             </Button>
             <Button 
               onClick={() => onExport('txt')}
               disabled={isLoading}
               variant="outline"
-              className="flex-1 bg-background hover:bg-background/90 text-foreground font-medium py-2 px-3 rounded border border-border flex items-center justify-center transition-colors"
+              className="flex-1 bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-3 rounded-md border border-gray-700 flex items-center justify-center transition-colors shadow-sm"
             >
-              <FaFileAlt className="mr-1.5" />
+              <FaFileAlt className="mr-1.5 text-green-400" />
               TXT
             </Button>
             <Button 
               onClick={onCopy}
               disabled={isLoading}
               variant="outline"
-              className="flex-1 bg-background hover:bg-background/90 text-foreground font-medium py-2 px-3 rounded border border-border flex items-center justify-center transition-colors"
+              className="flex-1 bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-3 rounded-md border border-gray-700 flex items-center justify-center transition-colors shadow-sm"
             >
-              <FaCopy className="mr-1.5" />
+              <FaCopy className="mr-1.5 text-purple-400" />
               Copy
             </Button>
           </div>

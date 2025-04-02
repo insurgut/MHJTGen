@@ -4,23 +4,23 @@
 
 @layer base {
   :root {
-    --background: 0 0% 12%;
-    --foreground: 0 0% 88%;
+    --background: 220 20% 6%;
+    --foreground: 0 0% 95%;
     
-    --card: 0 0% 18%;
-    --card-foreground: 0 0% 88%;
+    --card: 220 20% 9%;
+    --card-foreground: 0 0% 95%;
     
-    --popover: 0 0% 18%;
-    --popover-foreground: 0 0% 88%;
+    --popover: 220 20% 9%;
+    --popover-foreground: 0 0% 95%;
     
     --primary: 212 100% 50%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 88%;
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 0 0% 95%;
     
-    --muted: 0 0% 22%;
-    --muted-foreground: 0 0% 64%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 0 0% 75%;
     
     --accent: 212 100% 50%;
     --accent-foreground: 0 0% 100%;
@@ -30,8 +30,8 @@
 
     --success: 134 61% 41%;
     
-    --border: 0 0% 22%;
-    --input: 0 0% 22%;
+    --border: 220 20% 18%;
+    --input: 220 20% 16%;
     --ring: 212 100% 50%;
     
     --radius: 0.5rem;
@@ -56,15 +56,17 @@
   }
   
   .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-background;
+    @apply bg-background/70;
+    border-radius: 4px;
   }
   
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-muted rounded-md;
+    @apply bg-primary/50 rounded-md;
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
   
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted/90;
+    @apply bg-primary/70;
   }
   
   /* Range input styling */
@@ -108,14 +110,20 @@
   
   /* Button styling */
   button {
-    @apply transition-all duration-200 ease-in-out shadow-sm;
+    @apply transition-all duration-200 ease-in-out shadow-sm font-medium;
   }
   
   button:hover {
-    @apply shadow-md transform -translate-y-0.5;
+    @apply shadow-md transform -translate-y-0.5 brightness-110;
   }
   
   button:active {
-    @apply shadow-inner transform translate-y-0;
+    @apply shadow-inner transform translate-y-0 brightness-90;
+  }
+  
+  /* Improve readability for text */
+  p, h1, h2, h3, h4, h5, h6, span, div {
+    @apply tracking-wide;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 }

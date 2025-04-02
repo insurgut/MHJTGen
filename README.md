@@ -104,10 +104,10 @@ POST /api/export   - экспортирует данные в выбранный
 
 <div align="center">
   
-Проект разработан командой [Lisurgut](https://github.com/lisurgut)
+Проект разработан командой [insurgut](https://github.com/insurgut)
 
-![GitHub stars](https://img.shields.io/github/stars/lisurgut/MHJTGen?style=social)
-![GitHub forks](https://img.shields.io/github/forks/lisurgut/MHJTGen?style=social)
+![GitHub stars](https://img.shields.io/github/stars/insurgut/MHJTGen?style=social)
+![GitHub forks](https://img.shields.io/github/forks/insurgut/MHJTGen?style=social)
 
 </div>
 

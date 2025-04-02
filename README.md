@@ -8,8 +8,6 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-4.18.2-000000.svg?style=for-the-badge&logo=express&logoColor=white)
 
-<img src="attached_assets/Screenshot_20250402-093333.png" alt="MHJTGen Interface" width="800"/>
-
 </div>
 
 ## О проекте

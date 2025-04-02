@@ -76,17 +76,31 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       if (format === 'csv') {
         exportData = exportToCSV(data);
-        contentType = 'text/csv';
+        // Use text/csv with charset to ensure proper encoding
+        contentType = 'text/csv; charset=utf-8';
         filename = 'eastern-european-data.csv';
       } else {
         exportData = exportToTXT(data);
-        contentType = 'text/plain';
+        contentType = 'text/plain; charset=utf-8';
         filename = 'eastern-european-data.txt';
       }
       
+      // Ensure proper headers for file download
       res.setHeader('Content-Type', contentType);
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-      res.send(exportData);
+      // Add cache control headers
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+      
+      // Send the response with BOM for UTF-8
+      if (format === 'csv') {
+        // Add BOM for better compatibility with Excel and mobile CSV readers
+        const BOM = '\uFEFF';
+        res.send(BOM + exportData);
+      } else {
+        res.send(exportData);
+      }
     } catch (error) {
       console.error("Error exporting data:", error);
       res.status(500).json({ message: "Failed to export data" });

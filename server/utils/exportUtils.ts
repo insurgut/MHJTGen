@@ -1,17 +1,17 @@
 import { PersonData } from "@shared/schema";
 
 export function exportToCSV(data: PersonData[]): string {
-  // CSV header
-  let csvContent = "# Eastern European Data Generator - Created by @lisurgut\n";
-  csvContent += "ID,Full Name,Phone,Address,Passport\n";
+  // CSV header with semi-colon separator for better mobile support
+  let csvContent = "# Eastern European Data Generator - Created by @lisurgut\r\n";
+  csvContent += "ID;Full Name;Phone;Address;Passport\r\n";
   
-  // CSV data rows
+  // CSV data rows with semi-colon separator
   data.forEach((person) => {
-    csvContent += `${person.id},"${person.fullName}","${person.phone}","${person.address}","${person.passport}"\n`;
+    csvContent += `${person.id};"${person.fullName}";"${person.phone}";"${person.address}";"${person.passport}"\r\n`;
   });
   
   // CSV footer
-  csvContent += "# Generated with Eastern European Data Generator - @lisurgut\n";
+  csvContent += "# Generated with Eastern European Data Generator - @lisurgut\r\n";
   
   return csvContent;
 }

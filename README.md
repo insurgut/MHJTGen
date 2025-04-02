@@ -50,7 +50,7 @@
 
 ```bash
 # Клонирование репозитория
-git clone https://github.com/username/MHJTGen.git
+git clone https://github.com/insurgut/MHJTGen.git
 cd MHJTGen
 
 # Установка зависимостей

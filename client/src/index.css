@@ -76,25 +76,25 @@
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    @apply w-4 h-4 bg-blue-500 rounded-full cursor-pointer;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    @apply w-4 h-4 bg-white rounded-full cursor-pointer;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
     transition: all 0.2s ease;
   }
   
   input[type="range"]::-webkit-slider-thumb:hover {
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
-    @apply bg-blue-600;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+    @apply bg-gray-200;
   }
   
   input[type="range"]::-moz-range-thumb {
-    @apply w-4 h-4 bg-blue-500 rounded-full cursor-pointer border-0;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    @apply w-4 h-4 bg-white rounded-full cursor-pointer border-0;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
     transition: all 0.2s ease;
   }
   
   input[type="range"]::-moz-range-thumb:hover {
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
-    @apply bg-blue-600;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+    @apply bg-gray-200;
   }
   
   /* Checkbox styling */
@@ -103,7 +103,7 @@
   }
   
   input[type="checkbox"]:checked {
-    @apply bg-blue-500 border-blue-500;
+    @apply bg-white border-white;
   }
   
   /* Button styling */

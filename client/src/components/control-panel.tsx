@@ -94,7 +94,7 @@ export default function ControlPanel({
                 onChange={(e) => handleRecordsSliderChange(e.target.value)}
                 className="w-full h-2 appearance-none rounded-full bg-gray-700 outline-none cursor-pointer" 
                 style={{
-                  background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${options.recordsCount/10}%, #374151 ${options.recordsCount/10}%, #374151 100%)`,
+                  background: `linear-gradient(to right, #ffffff 0%, #ffffff ${options.recordsCount/10}%, #374151 ${options.recordsCount/10}%, #374151 100%)`,
                   WebkitAppearance: 'none'
                 }}
               />
@@ -126,7 +126,7 @@ export default function ControlPanel({
                       fields: {...options.fields, name: !!checked}
                     })
                   }
-                  className="h-5 w-5 rounded-md border-2 border-gray-600 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" 
+                  className="h-5 w-5 rounded-md border-2 border-gray-600 data-[state=checked]:bg-white data-[state=checked]:border-white" 
                 />
               </div>
               <label htmlFor="fieldName" className="ml-3 text-sm font-medium cursor-pointer">Full Name</label>
@@ -254,7 +254,7 @@ export default function ControlPanel({
               onChange={(e) => setOptions({...options, genderRatio: parseInt(e.target.value, 10)})}
               className="w-full h-2 appearance-none rounded-full bg-gray-700 outline-none cursor-pointer" 
               style={{
-                background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${options.genderRatio}%, #374151 ${options.genderRatio}%, #374151 100%)`,
+                background: `linear-gradient(to right, #ffffff 0%, #ffffff ${options.genderRatio}%, #374151 ${options.genderRatio}%, #374151 100%)`,
                 WebkitAppearance: 'none'
               }}
             />
@@ -270,7 +270,7 @@ export default function ControlPanel({
           <Button 
             onClick={onGenerate}
             disabled={isLoading}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-5 rounded-md flex justify-center items-center transition-colors shadow-md"
+            className="bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-5 rounded-md flex justify-center items-center transition-colors shadow-md border border-gray-700"
           >
             {isLoading ? (
               <>
@@ -282,7 +282,7 @@ export default function ControlPanel({
               </>
             ) : (
               <>
-                <FaBolt className="mr-2 text-yellow-300" />
+                <FaBolt className="mr-2 text-white" />
                 Generate Data
               </>
             )}
@@ -295,7 +295,7 @@ export default function ControlPanel({
               variant="outline"
               className="flex-1 bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-3 rounded-md border border-gray-700 flex items-center justify-center transition-colors shadow-sm"
             >
-              <FaFileCsv className="mr-1.5 text-blue-400" />
+              <FaFileCsv className="mr-1.5 text-white" />
               CSV
             </Button>
             <Button 
@@ -304,7 +304,7 @@ export default function ControlPanel({
               variant="outline"
               className="flex-1 bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-3 rounded-md border border-gray-700 flex items-center justify-center transition-colors shadow-sm"
             >
-              <FaFileAlt className="mr-1.5 text-green-400" />
+              <FaFileAlt className="mr-1.5 text-white" />
               TXT
             </Button>
             <Button 
@@ -313,7 +313,7 @@ export default function ControlPanel({
               variant="outline"
               className="flex-1 bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-3 rounded-md border border-gray-700 flex items-center justify-center transition-colors shadow-sm"
             >
-              <FaCopy className="mr-1.5 text-purple-400" />
+              <FaCopy className="mr-1.5 text-white" />
               Copy
             </Button>
           </div>

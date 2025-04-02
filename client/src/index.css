@@ -4,35 +4,36 @@
 
 @layer base {
   :root {
-    --background: 220 20% 6%;
-    --foreground: 0 0% 95%;
+    --background: 220 25% 4%;
+    --foreground: 220 15% 95%;
     
-    --card: 220 20% 9%;
-    --card-foreground: 0 0% 95%;
+    --card: 220 25% 7%;
+    --card-foreground: 220 15% 95%;
     
-    --popover: 220 20% 9%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 25% 7%;
+    --popover-foreground: 220 15% 95%;
     
-    --primary: 212 100% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 220 70% 60%;
+    --primary-foreground: 220 15% 98%;
     
-    --secondary: 220 20% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 220 25% 12%;
+    --secondary-foreground: 220 15% 95%;
     
-    --muted: 220 20% 12%;
-    --muted-foreground: 0 0% 75%;
+    --muted: 220 25% 12%;
+    --muted-foreground: 220 15% 70%;
     
-    --accent: 212 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 220 70% 60%;
+    --accent-foreground: 220 15% 98%;
     
-    --destructive: 354 70% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 220 15% 98%;
 
-    --success: 134 61% 41%;
+    --success: 140 65% 40%;
+    --success-foreground: 220 15% 98%;
     
-    --border: 220 20% 18%;
-    --input: 220 20% 16%;
-    --ring: 212 100% 50%;
+    --border: 220 25% 14%;
+    --input: 220 25% 10%;
+    --ring: 220 70% 60%;
     
     --radius: 0.5rem;
   }
@@ -50,23 +51,35 @@
   }
   
   /* Custom scrollbar */
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
   }
   
-  .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-background/70;
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
     border-radius: 4px;
   }
   
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-primary/50 rounded-md;
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-secondary rounded-full;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
   
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/70;
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary/80;
+  }
+  
+  .scrollbar-thumb-secondary::-webkit-scrollbar-thumb {
+    @apply bg-secondary;
+  }
+  
+  .scrollbar-thumb-primary::-webkit-scrollbar-thumb {
+    @apply bg-primary/30;
+  }
+  
+  .scrollbar-thumb-primary::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
   }
   
   /* Range input styling */
@@ -116,17 +129,17 @@
   /* Button styling */
   button {
     @apply transition-all duration-200 ease-in-out font-medium rounded-md;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
   }
   
   button[class*="bg-primary"] {
     @apply bg-gradient-to-br from-primary to-primary/90 text-white;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   }
   
   button:not([disabled]):hover {
     @apply shadow-md transform -translate-y-0.5 brightness-110;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 3px rgba(0, 0, 0, 0.15);
   }
   
   button:not([disabled]):active {
@@ -135,19 +148,48 @@
   }
   
   button[disabled] {
-    @apply opacity-50 cursor-not-allowed;
+    @apply opacity-60 cursor-not-allowed;
+  }
+  
+  /* Button variants */
+  button[class*="bg-secondary"] {
+    @apply bg-secondary/80 text-secondary-foreground;
+  }
+  
+  button[class*="border-border"] {
+    border: 1px solid hsl(var(--border));
   }
   
   /* Improve readability for text */
-  p, h1, h2, h3, h4, h5, h6, span, div {
+  p, h1, h2, h3, h4, h5, h6, span {
     @apply tracking-wide;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Heading styles */
+  h1, h2, h3, .font-heading {
+    @apply font-bold;
+    letter-spacing: -0.025em;
   }
   
   /* Card styling */
+  .shadow-glow {
+    box-shadow: 0 0 15px rgba(var(--primary), 0.15);
+  }
+  
   div[class*="bg-card"] {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  
+  /* Card hover effect */
+  div[class*="hover:shadow-lg"] {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  div[class*="hover:shadow-lg"]:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35), 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
   }
   
   /* Table styling */

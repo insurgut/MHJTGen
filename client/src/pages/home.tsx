@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { GenerationOptions, PersonData, DisplaySettings, ToastState } from "@/types";
-import { FaIdCard } from "react-icons/fa";
+import { DatabaseIcon, Shield } from "lucide-react";
 import ControlPanel from "@/components/control-panel";
 import DataPreview from "@/components/data-preview";
 import SettingsModal from "@/components/settings-modal";
@@ -142,40 +142,44 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-6 max-w-7xl">
-      <header className="mb-6">
-        <div className="flex justify-between items-center">
+      <header className="mb-8">
+        <div className="flex justify-between items-center bg-card p-4 rounded-lg shadow-lg border border-border">
           <div>
             <h1 className="text-2xl font-bold flex items-center">
-              <FaIdCard className="mr-2 text-white" />
+              <Shield className="mr-3 text-primary h-7 w-7" />
               Eastern European Data Generator
             </h1>
-            <p className="text-sm text-gray-400">Generate authentic personal data for Eastern European countries</p>
+            <p className="text-sm text-gray-400 ml-10">Generate authentic personal data for Eastern European countries</p>
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex flex-col items-end space-y-1">
             <span className="text-xs text-gray-400">Created by</span>
-            <span className="text-sm font-medium text-white">@lisurgut</span>
+            <span className="text-sm font-medium text-primary">@lisurgut</span>
           </div>
         </div>
       </header>
 
-      <main className="flex flex-col md:flex-row gap-6">
-        <ControlPanel 
-          options={options}
-          setOptions={setOptions}
-          onGenerate={handleGenerate}
-          onExport={handleExport}
-          onCopy={handleCopy}
-          isLoading={isLoading}
-        />
+      <main className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-1">
+          <ControlPanel 
+            options={options}
+            setOptions={setOptions}
+            onGenerate={handleGenerate}
+            onExport={handleExport}
+            onCopy={handleCopy}
+            isLoading={isLoading}
+          />
+        </div>
         
-        <DataPreview 
-          data={data || []}
-          isLoading={isLoading}
-          lastGenerated={lastGenerated}
-          onRefresh={handleGenerate}
-          onOpenSettings={() => setSettingsModalOpen(true)}
-          settings={displaySettings}
-        />
+        <div className="lg:col-span-2">
+          <DataPreview 
+            data={data || []}
+            isLoading={isLoading}
+            lastGenerated={lastGenerated}
+            onRefresh={handleGenerate}
+            onOpenSettings={() => setSettingsModalOpen(true)}
+            settings={displaySettings}
+          />
+        </div>
       </main>
 
       <SettingsModal 

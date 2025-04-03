@@ -120,3 +120,8 @@ POST /api/export   - экспортирует данные в выбранный
   **[Наверх](#MHJTGen)**
   
 </div>
+
+## Ссылки
+
+[![Static Badge](https://img.shields.io/badge/Replit-Rt?style=for-the-badge&logo=Replit&logoColor=F26207&labelColor=282828&color=282828)](https://replit.com/@tmgbfeq/MHJTGen)
+

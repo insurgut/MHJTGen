@@ -124,4 +124,5 @@ POST /api/export   - экспортирует данные в выбранный
 ## Ссылки
 
 [![Static Badge](https://img.shields.io/badge/Replit-Rt?style=for-the-badge&logo=Replit&logoColor=F26207&labelColor=282828&color=282828)](https://replit.com/@tmgbfeq/MHJTGen)
+
 **Replit** - На данном сервисе легко можно проверить как наш код, так и собственно написанный. В случае с нашим проектом нужно нажав на эконку выше скопировать проект уже с предустановленными библиотеками и прочим, после чего нажать Run и сервис сам запустить код.
